@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App1"
+             x:Class="App1.MainPage"  
+             BackgroundImage="login_bg.png">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="entryStyle" TargetType="Entry">
+                <Setter Property="Margin" Value="10,0,10,0" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="WidthRequest" Value="260" />
+            </Style>
+            <Style x:Key="stackLayoutStyle" TargetType="StackLayout">
+                <Setter Property="Margin" Value="20,0,20,-10" />
+                <Setter Property="Padding" Value="5" />
+                <Setter Property="BackgroundColor" Value="#E9F0F7" />
+                <Setter Property="HeightRequest" Value="50" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout HorizontalOptions="Center" Margin="80,80,80,-110">
+                <Image Source="login_logo.png"  HorizontalOptions="Center"/>
+            </StackLayout>
+            <StackLayout VerticalOptions="CenterAndExpand" WidthRequest="340">
+                <StackLayout   Orientation="Horizontal"  Style="{StaticResource stackLayoutStyle}">
+                    <Image Source="login_person.png"  Scale="0.7"></Image>
+                    <Entry x:Name="userNameText"  Style="{StaticResource entryStyle}"/>
+                </StackLayout>
+                <StackLayout   Orientation="Horizontal"  Style="{StaticResource stackLayoutStyle}">
+                    <Image Source="login_password.png"  Scale="0.7"></Image>
+                    <Entry x:Name="passwordText"   IsPassword="True" Style="{StaticResource entryStyle}"/>
+                </StackLayout>
+                <Button x:Name="loginButton" Margin="20,40,20,40"   BackgroundColor="#DA3738" Clicked="Login" TextColor="White"  FontSize="Medium"  Text="登录"/>
+            </StackLayout>
+            <StackLayout  Orientation="Horizontal" VerticalOptions="End" Padding="0,0,0,15">
+                <Label XAlign="Center" HorizontalOptions="CenterAndExpand" YAlign="Center"  FontSize="Small" TextColor="Black"  Text="Copyright © 2017-2018 二重集团 版权所有"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
